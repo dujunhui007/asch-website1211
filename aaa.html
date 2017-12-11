@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html,body{
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+<div style="margin:0 auto;height:100%;width:100%;">
+    <!--<button id="btn">js控制页面的全屏展示和退出全屏显示</button>-->
+    <div id="content" title="单击返回首页，双击全屏显示" style="margin:0 auto;height:100%;width:100%; background:#ccc;" >
+        <h1>js控制页面的全屏展示和退出全屏显示</h1>
+    </div>
+</div>
+</body>
+<script language="JavaScript">
+  document.getElementById("content").ondblclick=function(){
+    var elem = document.getElementById("content");
+    requestFullScreen(elem);
+  };
+  function requestFullScreen(element) {
+    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+    if (requestMethod) {
+      requestMethod.call(element);
+    } else if (typeof window.ActiveXObject !== "undefined") {
+      var wscript = new ActiveXObject("WScript.Shell");
+      if (wscript !== null) {
+        wscript.SendKeys("{F11}");
+      }
+    }
+  }
+</script>
+</html>
