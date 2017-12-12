@@ -1,4 +1,7 @@
 $(document).ready(function () {
+
+  $("#top .container hr").addClass("aschBoundary");
+
   $("#top .container .containerTitle").click(function () {
     setTimeout(function () {
       window.location.href = "aschVideo.html";

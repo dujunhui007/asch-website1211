@@ -61,6 +61,8 @@ $(document).ready(function () {
   switchFullScreen();
 
 
+  $("#top .container hr").addClass("aschBoundary");
+
   $("#top .container .containerTitle").click(function () {
 
     setTimeout(function () {
